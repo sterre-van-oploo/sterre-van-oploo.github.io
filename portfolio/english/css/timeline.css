@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+  
+.page-border {
+    height: calc(100vh - 20px); /* Full viewport height minus borders */
+    width: calc(100vw - 20px); /* Full viewport width minus borders */
+    border: 5px solid #38383D;
+    margin: 10px; /* Keep 10px margin around the page */
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgb(64, 74, 83);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 30px;
+}
+
+/* timeline-boxes-container around timeline-boxes */
+.timeline-boxes-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-boxes-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #68747e;
+    border: 4px solid #4d5155;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the timeline-boxes-container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the timeline-boxes-container to the right */
+.right {
+    left: 50%;
+}
+
+/* Fix the circle for timeline-boxes-container on the right side */
+.right::after {
+    left: -16px;
+}
+
+/* The actual timeline-boxes */
+.timeline-boxes {
+    padding: 20px 30px;
+    background-color: #464f57;
+    position: relative;
+    border-radius: 10px;
+    transition: background-color 1.2s; 
+    border: solid 5px #343a41;
+    color: aliceblue;
+}
+
+.timeline-boxes:hover {
+    background-color: #5a646c;
+    animation-fill-mode:forwards;
+    animation: ease-in 50s;
+    transition: all 2s ease;
+}
+
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    /* Place the timeline to the left */
+    .timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width timeline-boxes-container */
+    .timeline-boxes-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+    left: 15px;
+    }
+    
+    /* Make all right timeline-boxes-container behave like the left ones */
+    .right {
+    left: 0%;
+    }
+}

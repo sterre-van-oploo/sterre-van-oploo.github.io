@@ -1,0 +1,27 @@
+TO-DO:
+* translate the page (only when finished)
+
+
+FOR WHEN I CAN'T CODE:
+* edit the gif on the projects page
+* add comments ab how the code works
+
+
+DONE:
+* the background
+* home page  
+* my-projects page
+* make the translator translate
+* make a favicon
+* finish the timeline
+* edit the text on the timeline! (Imma save that for when I'm shit brained)
+* fix the border in the timeline page
+* finish the about-me
+* fix the border in the timeline page
+* add a border around the images in the projects page
+* write the about me
+* make the blog
+* fix the responsive thing in the about me page
+
+
+MISC:

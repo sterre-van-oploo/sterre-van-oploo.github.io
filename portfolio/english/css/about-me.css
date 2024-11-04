@@ -1,0 +1,174 @@
+/* Main container styling for the entire layout */
+.main-container {
+    display: flex; /* Flexbox layout for side-by-side positioning */
+    justify-content: center; /* Center align items to prevent sticking to the side */
+    margin-top: 120px; /* Space above the container */
+    gap: 20px; /* Adds spacing between the two sections */
+}
+
+/* About Me Section */
+.about-me-container {
+    height: 600px; /* Set height to 200px */
+    background-color: #343a41; /* Main box color */
+    color: #FFFFFF;
+    width: 50%; /* Width remains the same */
+    max-width: 700px; /* Max width cap for larger screens */
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box; /* Ensure padding doesn't affect height/width */
+}
+
+/* Title styling */
+.about-me-container h1 {
+    font-family: monospace;
+    font-size: 1.7rem;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
+    font-size: calc(0.9rem + 1.4vw);
+    transition: font-size 0.3s ease;
+}
+
+.about-me-content {
+    background-color: #464f57;
+    border-radius: 15px;
+    padding: 15px; /* Padding for the inner box */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #b2b7bb;
+    flex-grow: 1; /* Allows the inner box to expand */
+    overflow-y: auto; /* Adds scroll if content overflows */
+    text-align: center;
+    max-height: 450px; /* Adjust this value as needed to control the scrollable area */
+}
+
+
+/* Blog Slideshow Container */
+.slideshow-container.blog {
+    position: relative;
+    width: 45%; /* Adjust as needed */
+    background-color: #343a41;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    max-height: none; /* Allow max height to be unrestricted */
+    display: flex; /* Allow flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+}
+
+/* Slide Styling */
+.slide {
+    display: none; /* Hidden by default */
+    background-color: #464f57; 
+    padding: 15px; /* Padding for the slide */
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    flex-grow: 0; /* Prevent the slide from expanding to fill the container */
+    display: flex; /* Set each slide as a flex container */
+    flex-direction: column; /* Stack internal elements */
+    justify-content: space-between; /* Distribute space between elements */
+}
+
+/* Ensure slides are visible */
+.slide:first-child {
+    display: flex; /* Ensure the first slide is visible */
+}
+
+/* Slideshow Image */
+.slideshow-image {
+    width: 80%; /* Image takes 80% of the slide's width */
+    margin: 10px auto; /* Center the image */
+    display: block;
+    border-radius: 5px;
+    border: #343a41 3px solid;
+}
+
+p {
+    color: #FFF; /* Text color */
+    margin: 0; /* Reset default margin */
+    padding: 5px; /* Add some padding */
+    flex-grow: 0; /* Prevent text from expanding the container */    
+    font-size: calc(0.5rem + 0.5vw);
+    transition: font-size 0.3s ease;
+}
+
+/* Additional styling for text within slides */
+h1 {
+    color: #FFF; /* Text color */
+    margin: 0; /* Reset default margin */
+    padding: 5px; /* Add some padding */
+    flex-grow: 0; /* Prevent text from expanding the container */
+    font-size: calc(0.7rem + 1vw);
+    transition: font-size 0.3s ease;
+}
+
+h3 {
+    color: #FFF; /* Text color */
+    margin: 0; /* Reset default margin */
+    padding: 5px; /* Add some padding */
+    flex-grow: 0; /* Prevent text from expanding the container */
+    font-size: calc(0.5rem + 0.5vw);
+    transition: font-size 0.3s ease;
+}
+
+/* Add bottom padding to ensure text doesn't escape */
+.slide p {
+    margin-bottom: 20px; /* This ensures there's a gap at the bottom */
+}
+
+.blog-title {
+    font-family: monospace;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.prev, .next {
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 25px;
+}
+
+.prev {
+    left: 0;
+} 
+
+.next {
+    right: 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 900px) {
+    .main-container {
+        flex-direction: column; /* Stack sections on top of each other */
+        align-items: center; /* Center align the items */
+    }
+    .about-me-container {
+        width: 90%; /* Adjusts the width to be more narrow on smaller screens */
+        margin: 10px auto; /* Centers and adds margin on smaller screens */
+        height: 200px; /* Set height to 200px */
+    }
+    .slideshow-container.blog {
+        width: 90%; /* Full width on smaller screens */
+        max-height: none; /* Remove max height for smaller screens */
+    }
+    .main-container {
+        margin-top: 10px; /* Space above the container */
+    }
+    .about-me-content {
+        max-height: 150px; /* Adjust this value as needed to control the scrollable area */
+    }
+    .main-container {
+        gap: 10px; /* Adds spacing between the two sections */
+    }
+}

@@ -1,0 +1,334 @@
+/* FOR INDEX.HTML!!!!! */
+
+
+/* Top-left "Dutch" link styles */
+.language-link {
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    font-size: calc(0.5rem + 1vw);
+    color: white; 
+    text-decoration: none;
+    transition: font-size 0.3s ease;
+    z-index: 2;
+}
+
+/* Stacking effect on smaller screens */
+@media screen and (max-width: 600px) {
+    .language-link {
+        top: 15px;
+        left: 15px;
+        font-size: calc(0.9rem + 1vw);
+        display: block;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 20vh; 
+}
+
+.name, .description {
+    color: aliceblue;
+    font-weight: 100;
+    text-align: center;
+    margin: 0; 
+    transition: font-size 0.3s ease;
+}
+
+.name {
+    font-size: calc(0.9rem + 1.4vw);
+}
+
+.description {
+    font-size: calc(0.6rem + 0.8vw);
+    padding: 20px;
+}
+
+
+/* star styles */
+.projects{
+    width: 50px;  
+    aspect-ratio: 1;
+    background: #ffffff;
+    clip-path: polygon(50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+     ); 
+     transition: all .2s ease;
+     transform: scale(1);
+}
+
+.about-me{
+    background-color: white;
+    width: 50px;  
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+     );  
+     transition: all .2s ease;
+     transform: scale(1);
+}
+
+.timeline{
+    background-color: white;
+    width: 50px;  
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+     ); 
+     transition: all .2s ease;
+     transform: scale(1);
+}
+
+
+/* stars hoover animation */
+.projects{
+    background-color: white;
+    cursor: pointer;
+    /* animation: star-grow 4s; */
+    animation-fill-mode:forwards;
+}
+
+.about-me{
+    background-color: white;
+    cursor: pointer;
+    /* animation: star-grow 4s; */
+    animation-fill-mode:forwards;
+}
+
+.timeline{
+    background-color: white;
+    cursor: pointer;
+    /* animation: star-grow 4s; */
+    animation-fill-mode:forwards;
+}
+
+
+.projects:hover{
+    background-color: white;
+    cursor: pointer;
+    /* animation: star-grow 4s; */
+    animation-fill-mode:forwards;
+    animation: ease-in 50s;
+
+    width: 60px;  
+    aspect-ratio: 1;
+    background: #ffffff;
+    clip-path: polygon(50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+     ); 
+     transition: all .5s ease;
+     transform: scale(1);
+}
+
+.about-me:hover{
+    background-color: white;
+    cursor: pointer;
+    /* animation: star-grow 4s; */
+    animation-fill-mode:forwards;
+    animation: ease-in 50s;
+
+    width: 60px;  
+    aspect-ratio: 1;
+    background: #ffffff;
+    clip-path: polygon(50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+     ); 
+     transition: all .5s ease;
+     transform: scale(1);
+}
+
+.timeline:hover{
+    background-color: white;
+    cursor: pointer;
+    /* animation: star-grow 4s; */
+    animation-fill-mode:forwards;
+    animation: ease-in 50s;
+
+    width: 60px;  
+    aspect-ratio: 1;
+    background: #ffffff;
+    clip-path: polygon(50% 0,
+      calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+      calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+      calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+     ); 
+     transition: all .5s ease;
+     transform: scale(1);
+}
+
+@keyframes star-grow{
+    0%   {opacity: 100%; width: 50px;}
+    100%  {opacity: 0%;width: 100px;}
+}
+
+.projects.clicked, .about-me.clicked, .timeline.clicked {
+    animation: star-grow 2s;
+}
+
+/* Optional: add this to prevent multiple clicks during the animation */
+.projects.clicked-disabled, .about-me.clicked-disabled, .timeline.clicked-disabled {
+    pointer-events: none;  /* Prevent interaction while the animation is running */
+}
+
+/* -----------------------------------grid styles------------------------------------ */
+
+#container div {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+
+    border: black solid 2px;
+    border-radius: 5px;
+}
+
+.main {
+    display: grid;
+    position: absolute;
+    inset: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "title"
+        "header"
+        "lower-header"
+        "upper-body"
+        "body"
+        "lower-body"
+        "footer";
+    * {
+        align-items: center;
+        display: flex;
+        font-size: 40px;
+    }
+    .title {
+        /* background-color: #e84747; */
+        grid-area: title;
+    }
+
+    .header {
+        /* background-color: #e49149; */
+        grid-area: header;
+    }
+
+    .lower-header {
+        /* background-color: #efc866; */
+        grid-area: lower-header;
+    }
+
+    .upper-body {
+        /* background-color: #5a8e61; */
+        grid-area: upper-body;
+    }
+
+    .body {
+        /* background-color: #669e96; */
+        grid-area: body;
+    }
+
+    .lower-body {
+        /* background-color: #9378ca; */
+        grid-area: lower-body;
+    }
+
+    .footer {
+        /* background-color: #b6779a; */
+        grid-area: footer;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main {
+        .title {
+            padding-left: 20%;
+        }
+
+        .header {
+            padding-left: 50%;
+        }
+
+        .lower-header {
+            padding-left: 30%;
+        }
+
+        .upper-body {
+            padding-left: 80%;
+        }
+
+        .body {
+            padding-left: 90%;
+        }
+
+        .lower-body {
+            padding-left: 30%;
+        }
+
+        .footer {
+            padding-left: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .main {
+        .title {
+            padding-left: 70%;
+        }
+
+        .header {
+            padding-left: 30%;
+        }
+
+        .lower-header {
+            padding-left: 60%;
+            color: white;
+            font-size: 65px;
+        }
+
+        .upper-body {
+            padding-left: 10%;
+            color: white;
+            font-size: 65px;
+        }
+
+        .body {
+            padding-left: 30%;
+        }
+
+        .lower-body {
+            padding-left: 80%;
+        }
+
+        .footer {
+            padding-left: 50%;
+        }
+    }
+}
+   
+/* ----------------------------------------------------------------------------    */
+      
